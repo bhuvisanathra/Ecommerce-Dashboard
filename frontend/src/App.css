@@ -1,0 +1,95 @@
+.nav-ul {
+    margin: 0;
+    padding: 0;
+    background-color: skyblue;
+}
+
+.nav-ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.nav-ul li a {
+    padding: 5px;
+    text-decoration: none;
+    color: #000;
+    font-style: bold;
+    font-weight: 600;
+}
+
+.footer-div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-style: bold;
+    font-weight: 600;
+    background-color: skyblue;
+    font-weight: 600;
+}
+
+.inputbox {
+    display: block;
+    margin: 25px;
+    padding: 12px;
+    width: 300px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.signupclass h1 {
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid #000;
+    font-size: 40px;
+}
+
+.signupclass input {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+button {
+    font-size: 22px;
+    background-color: skyblue;
+    color: #000;
+    font-weight: 600;
+    width: 173px;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
