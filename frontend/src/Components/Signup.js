@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
@@ -7,6 +7,17 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+
+    //This effect will check
+    //If There is user stored in localstorage then
+    //User cannot redirect again to Signup Page
+
+    useEffect(() => {
+        const auth = localStorage.getItem('users');
+        if (auth) {
+            navigate('/');
+        }
+    })
 
     const collectData = async (e) => {
         console.log(userName, email, password);
@@ -20,10 +31,8 @@ const Signup = () => {
         })
         let results = await result.json()
         console.log(results);
-
-        if (results) {
-            navigate('/')
-        }
+        localStorage.setItem("users", JSON.stringify(results));
+        navigate('/')
 
     }
 
