@@ -1,13 +1,30 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
 
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
-    const collectData = (e) => {
+    const collectData = async (e) => {
         console.log(userName, email, password);
+        //Fetch is used to retrieve the APIs from the backend
+        const result = await fetch('http://localhost:5000/register', {
+            method: "post",
+            body: JSON.stringify({ userName, email, password }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        let results = await result.json()
+        console.log(results);
+
+        if (results) {
+            navigate('/')
+        }
+
     }
 
     return (
