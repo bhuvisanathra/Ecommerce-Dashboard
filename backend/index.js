@@ -10,7 +10,21 @@ app.use(cors());
 app.post("/register", async (req, res) => {
     let user = new User(req.body);
     let result = await user.save();
+    result = result.toObject();
+    delete result.password;
     res.send(result);
+});
+
+//Api for Login
+app.post("/login", async (req, res) => {
+
+    //Remove Password in Response
+    if (req.body.password && req.body.email) {
+        let user = await User.findOne(req.body).select('-password');
+        user ? res.send(user) : res.send({ 'Result': 'User Not Found' });
+    } else {
+        res.send({ 'Result': 'Invalid Credentials' });
+    }
 })
 
 app.listen(5000, () => {

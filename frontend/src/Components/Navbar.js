@@ -18,7 +18,15 @@ const Navbar = () => {
                 <li><Link to="/update">Update Products</Link></li>
                 <li><Link to="/remove">Remove Products</Link></li>
                 <li><Link to="/Profile">My Profile</Link></li>
-                <li> {auth ? <Link onClick={logout} to="/logout">Logout</Link> : <Link to="/Signup">Sign Up</Link>}</li>
+                {
+                    auth ?
+                        <li><Link onClick={logout} to="/Signup">Logout</Link></li>
+                        : <>
+                            <li><Link to="/Signup">Sign Up</Link></li>
+                            <li><Link to="/Login">Login</Link></li>
+                        </>
+
+                }
             </ul>
         </div>
     )
