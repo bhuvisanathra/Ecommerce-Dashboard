@@ -63,6 +63,13 @@ button {
     cursor: pointer;
 }
 
+.logoImg {
+    width: 70px;
+    float: right;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
