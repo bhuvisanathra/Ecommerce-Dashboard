@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signup from './Components/Signup';
 import PrivateComponent from './Components/PrivateComponent';
 import Login from './Components/Login';
+import AddProduct from './Components/AddProduct';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             //For Navigation of Private component after Login Only
           <Route element={<PrivateComponent />}>
             <Route path="/" element={<h1>Product List Page</h1>} />
-            <Route path="/add" element={<h1>Add Product Page</h1>} />
+            <Route path="/add" element={<AddProduct />} />
             <Route path="/update" element={<h1>Update Product Page</h1>} />
             <Route path="/remove" element={<h1>remove Product Page</h1>} />
             <Route path="/logout" element={<h1>Logout Page</h1>} />
