@@ -26,6 +26,9 @@ const Navbar = () => {
                         <li><Link to="/remove">Remove Products</Link></li>
                         <li><Link to="/Profile">My Profile</Link></li>
                         <li><Link onClick={logout} to="/Signup">Logout ({JSON.parse(auth).name})</Link></li>
+                        {
+                            console.log(JSON.parse(auth))
+                        }
                     </ul>
                     : <ul className='nav-ul'>
                         <li><Link to="/Signup">Sign Up</Link></li>

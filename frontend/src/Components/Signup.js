@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
 
-    const [userName, setUserName] = useState("");
+    const [name, setname] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -20,11 +20,11 @@ const Signup = () => {
     })
 
     const collectData = async (e) => {
-        console.log(userName, email, password);
+        console.log(name, email, password);
         //Fetch is used to retrieve the APIs from the backend
         const result = await fetch('http://localhost:5000/register', {
             method: "post",
-            body: JSON.stringify({ userName, email, password }),
+            body: JSON.stringify({ name, email, password }),
             headers: {
                 "Content-Type": "application/json"
             }
@@ -42,11 +42,11 @@ const Signup = () => {
             <h1 className="inputbox h1">Registration</h1>
 
             <input
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
+                value={name}
+                onChange={(e) => setname(e.target.value)}
                 className="inputbox"
                 type="text"
-                placeholder="Enter Username" />
+                placeholder="Enter name" />
 
 
             <input
