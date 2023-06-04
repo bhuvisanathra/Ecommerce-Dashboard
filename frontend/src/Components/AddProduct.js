@@ -6,8 +6,13 @@ const AddProduct = () => {
     const [Price, setPrice] = React.useState('');
     const [Category, setCategory] = React.useState('');
     const [Company, setCompany] = React.useState('');
+    const [error, setError] = React.useState('false');
 
     const addProduct = async () => {
+        if (!name || !Price || !Category || !Company) {
+            setError(true);
+            return false;
+        }
         const userId = JSON.parse(localStorage.getItem('users'))._id;
         console.log(userId);
         let result = await fetch('http://localhost:5000/add-product', {
@@ -31,6 +36,8 @@ const AddProduct = () => {
                 onChange={(e) => { setName(e.target.value) }}
                 value={name}
             />
+            {error && !name && <span className='errorMessage'>Enter Valid Product-Name</span>}
+
             <input
                 type='text'
                 placeholder='Enter Product Price'
@@ -38,6 +45,8 @@ const AddProduct = () => {
                 value={Price}
                 onChange={(e) => { setPrice(e.target.value) }}
             />
+            {error && !Price && <span className='errorMessage'>Enter Valid Price</span>}
+
             <input
                 type='text'
                 placeholder='Enter Product Category'
@@ -45,6 +54,8 @@ const AddProduct = () => {
                 onChange={(e) => { setCategory(e.target.value) }}
                 value={Category}
             />
+            {error && !Category && <span className='errorMessage'>Enter Valid Category</span>}
+
             <input
                 type='text'
                 placeholder='Enter Product Company'
@@ -52,6 +63,8 @@ const AddProduct = () => {
                 onChange={(e) => { setCompany(e.target.value) }}
                 value={Company}
             />
+            {error && !Company && <span className='errorMessage'>Enter Valid Company-Name</span>}
+
             <button
                 onClick={addProduct}
                 className='inputbox'>Add Product</button>
