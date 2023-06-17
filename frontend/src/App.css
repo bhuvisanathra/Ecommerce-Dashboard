@@ -120,6 +120,18 @@ button {
     margin: 0;
 }
 
+.DeleteButton {
+    font-size: 15px;
+    background-color: skyblue;
+    color: #000;
+    font-weight: 600;
+    width: 101px;
+    cursor: pointer;
+    height: 25px;
+    border-radius: 7px;
+
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
