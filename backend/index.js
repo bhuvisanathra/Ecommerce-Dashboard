@@ -35,6 +35,16 @@ app.post("/add-product", async (req, res) => {
     res.send(result);
 })
 
+
+app.get("/products", async (req, res) => {
+    let products = await Product.find();
+    if (products.length > 0) {
+        res.send(products)
+    } else {
+        res.send({ result: "No Product Found" });
+    }
+})
+
 app.listen(5000, () => {
     console.log("Server is running at http://localhost:5000");
 });

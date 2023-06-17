@@ -101,6 +101,25 @@ button {
     margin-bottom: -8px;
 }
 
+.product-list {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+.product-list ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 5px;
+    width: 150px;
+    border: 1px solid skyblue;
+}
+
+.product-list ul {
+    margin: 0;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

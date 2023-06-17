@@ -6,6 +6,7 @@ import Signup from './Components/Signup';
 import PrivateComponent from './Components/PrivateComponent';
 import Login from './Components/Login';
 import AddProduct from './Components/AddProduct';
+import ProductList from './Components/ProductList';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
             //For Navigation of Private component after Login Only
           <Route element={<PrivateComponent />}>
-            <Route path="/" element={<h1>Product List Page</h1>} />
+            <Route path="/" element={<ProductList />} />
             <Route path="/add" element={<AddProduct />} />
             <Route path="/update" element={<h1>Update Product Page</h1>} />
             <Route path="/remove" element={<h1>remove Product Page</h1>} />
