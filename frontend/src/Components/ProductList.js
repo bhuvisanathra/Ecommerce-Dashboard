@@ -9,7 +9,7 @@ const ProductList = () => {
     }, [])
 
     const getProducts = async () => {
-        let result = await fetch('http://localhost:5000/products');
+        let result = await fetch('https://e-commerce-dashboard-6qk3.onrender.com/products');
         result = await result.json();
         setproducts(result);
     }
@@ -17,7 +17,7 @@ const ProductList = () => {
 
     const deleteProduct = async (id) => {
         // console.log(id)
-        let result = await fetch(`http://localhost:5000/product/${id}`, {
+        let result = await fetch(`https://e-commerce-dashboard-6qk3.onrender.com/product/${id}`, {
             method: 'DELETE'
         });
         result = await result.json();
@@ -29,7 +29,7 @@ const ProductList = () => {
     const searchHandle = async (e) => {
         let key = e.target.value;
         if (key) {
-            let result = await fetch(`http://localhost:5000/search/${key}`);
+            let result = await fetch(`https://e-commerce-dashboard-6qk3.onrender.com/search/${key}`);
             result = await result.json();
             if (result) {
                 setproducts(result);
