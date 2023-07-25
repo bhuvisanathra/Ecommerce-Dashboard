@@ -50,6 +50,39 @@ app.delete("/product/:id", async (req, res) => {
     res.send(result);
 })
 
+app.get("/product/:id", async (req, res) => {
+    let result = await Product.findOne({ _id: req.params.id })
+    if (result) {
+        res.send(result);
+    } else {
+        res.send({ result: "No Record Found" });
+    }
+})
+
+app.put("/product/:id", async (req, res) => {
+    let result = await Product.updateOne(
+        //On Which bases will change the data
+        { _id: req.params.id },
+        //what data will change
+        {
+            $set: req.body
+        })
+    res.send(result);
+})
+
+app.get("/search/:key", async (req, res) => {
+    let result = await Product.find({
+        //Search to many field from one field
+        "$or": [
+            { name: { $regex: req.params.key } },
+            { Price: { $regex: req.params.key } },
+            { Company: { $regex: req.params.key } },
+            { Category: { $regex: req.params.key } }
+        ]
+    });
+    res.send(result);
+})
+
 app.listen(5000, () => {
     console.log("Server is running at http://localhost:5000");
 });

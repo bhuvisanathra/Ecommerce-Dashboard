@@ -111,13 +111,22 @@ button {
 .product-list ul li {
     list-style: none;
     display: inline-block;
-    padding: 5px;
+    padding: 15px;
+    font-size: 20px;
     width: 150px;
     border: 1px solid skyblue;
 }
 
+.product-list .nameList {
+    width: 250px;
+}
+
 .product-list ul {
     margin: 0;
+}
+
+.fontcorrection {
+    font-size: 14px;
 }
 
 .DeleteButton {
@@ -125,11 +134,24 @@ button {
     background-color: skyblue;
     color: #000;
     font-weight: 600;
-    width: 101px;
+    width: 67px;
     cursor: pointer;
-    height: 25px;
+    height: 20px;
     border-radius: 7px;
+    margin-right: 6px;
+}
 
+.inputBoxSearch {
+    width: auto;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: skyblue;
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+    height: 20px;
 }
 
 @keyframes App-logo-spin {
