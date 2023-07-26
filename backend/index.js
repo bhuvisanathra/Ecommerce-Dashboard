@@ -80,6 +80,7 @@ app.get("/search/:key", async (req, res) => {
             { Category: { $regex: req.params.key } }
         ]
     });
+    console.log(result);
     res.send(result);
 })
 
