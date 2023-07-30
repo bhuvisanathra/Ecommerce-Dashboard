@@ -19,7 +19,7 @@ const UpdateProduct = () => {
 
     const getProductDetails = async () => {
         // console.log(params);
-        let result = await fetch(`https://e-commerce-dashboard-6qk3.onrender.com/product/${params.id}`);
+        let result = await fetch(`http://localhost:5000/product/${params.id}`);
         result = await result.json();
         console.log(result);
         setName(result.name)
@@ -31,7 +31,7 @@ const UpdateProduct = () => {
     const updateProduct = async () => {
         // console.log(name, Price, Category, Company);
 
-        let result = await fetch(`https://e-commerce-dashboard-6qk3.onrender.com/product/${params.id}`, {
+        let result = await fetch(`http://localhost:5000/product/${params.id}`, {
             method: 'PUT',
             body: JSON.stringify({ name, Price, Category, Company }),
             headers: { 'Content-Type': 'application/json' }

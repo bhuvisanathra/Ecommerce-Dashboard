@@ -22,7 +22,7 @@ const Signup = () => {
     const collectData = async (e) => {
         console.log(name, email, password);
         //Fetch is used to retrieve the APIs from the backend
-        const result = await fetch('https://e-commerce-dashboard-6qk3.onrender.com/register', {
+        const result = await fetch('http://localhost:5000/register', {
             method: "post",
             body: JSON.stringify({ name, email, password }),
             headers: {
